@@ -12,11 +12,22 @@ netmask_dot_notation = network.netmask
 
 # Step 2: Validate Users answers and enforce AWS requirements
 def validate_input():
-    if prefix >= 28 and num_subnets <=200:
-        return 
+    if prefix >= 8 or  and num_subnets <=200:
+        return available_ips() 
     else:
         print("AWS requires you to have a prefix length/netmask of no less than /28 and no more than 200 subnets")
-  
-total_ips = print(validate_input())
 
+
+def available_ips():
+    ''' Uses the netmask to calculate the number of hosts(how many bits out of 32 are available for use).
+      It will use this to figure out the number of available ips ''' 
+    num_hosts = 32 - prefix
+    # print(f"The number of host bits available is: {num_hosts}")
+    num_ips = 2 ** num_hosts
+    # print(f"You have {num_ips} ip addresses in total")
+    return num_ips
+
+
+total_ips = print(validate_input())
+available_ips() 
 

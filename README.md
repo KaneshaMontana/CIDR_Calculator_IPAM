@@ -29,6 +29,9 @@ I'm building a CIDR range calculator inspired by AWS IPAM. I couldn't find a sim
       * AWS services (x.x.x.1, x.x.x.2, x.x.x.3)
       * Broadcast address (x.x.x.255)
   * **Minimum subnet size: /28 (16 - 5 IPs)**
+  * **Subnets cannot be larger than the VPC in which they are created**
+
+
 
 
 ## What Don't I Understand yet?
